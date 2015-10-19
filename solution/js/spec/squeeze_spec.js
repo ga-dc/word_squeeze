@@ -1,11 +1,14 @@
-describe("#squeeze", function(){
-  it("works for two letters", function(){
-      expect(squeeze("oo")).toBe("o")
-  });
+function one_o(str) {
+   str = str.replace(/o{2}/gi, "o");
+   return str;
+}
+one_o("boozoo");
 
-  it("works for multiple repetitions of a letter within a single word", function(){
-      expect(squeeze("shmeeeeeee!")).toBe("shme!")
-  });
+function muliple_e_to_one_e(str) {
+   str = str.replace(/e+/gi, "e");
+   return str;
+}
+muliple_e_to_one_e("meeeeeeeeeleeeeeeeee");
 
   it("does not change a word with duplicates that are not consecutive", function(){
       expect(squeeze("banana")).toBe("banana")
